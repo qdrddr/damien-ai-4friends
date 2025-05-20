@@ -1,0 +1,733 @@
+{
+  "nodes": [
+    {
+      "width": 300,
+      "height": 533,
+      "id": "conversationalRetrievalQAChain_0",
+      "position": {
+        "x": 1709.6611290284686,
+        "y": 315.4265939602729
+      },
+      "type": "customNode",
+      "data": {
+        "id": "conversationalRetrievalQAChain_0",
+        "label": "Conversational Retrieval QA Chain",
+        "version": 3,
+        "name": "conversationalRetrievalQAChain",
+        "type": "ConversationalRetrievalQAChain",
+        "baseClasses": [
+          "ConversationalRetrievalQAChain",
+          "BaseChain",
+          "Runnable"
+        ],
+        "category": "Chains",
+        "description": "Document QA - built on RetrievalQAChain to provide a chat history component by Damien for Friends learning AI",
+        "inputParams": [
+          {
+            "label": "Return Source Documents",
+            "name": "returnSourceDocuments",
+            "type": "boolean",
+            "optional": true,
+            "id": "conversationalRetrievalQAChain_0-input-returnSourceDocuments-boolean"
+          },
+          {
+            "label": "Rephrase Prompt",
+            "name": "rephrasePrompt",
+            "type": "string",
+            "description": "Using previous chat history, rephrase question into a standalone question",
+            "warning": "Prompt must include input variables: {chat_history} and {question}",
+            "rows": 4,
+            "additionalParams": true,
+            "optional": true,
+            "default": "Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question.\n\nChat History:\n{chat_history}\nFollow Up Input: {question}\nStandalone Question:",
+            "id": "conversationalRetrievalQAChain_0-input-rephrasePrompt-string"
+          },
+          {
+            "label": "Response Prompt",
+            "name": "responsePrompt",
+            "type": "string",
+            "description": "Taking the rephrased question, search for answer from the provided context",
+            "warning": "Prompt must include input variable: {context}",
+            "rows": 4,
+            "additionalParams": true,
+            "optional": true,
+            "default": "You are a helpful assistant. Using the provided context, answer the user's question to the best of your ability using the resources provided.\nIf there is nothing in the context relevant to the question at hand, just say \"Hmm, I'm not sure.\" Don't try to make up an answer.\n------------\n{context}\n------------\nREMEMBER: If there is no relevant information within the context, just say \"Hmm, I'm not sure.\" Don't try to make up an answer.",
+            "id": "conversationalRetrievalQAChain_0-input-responsePrompt-string"
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Chat Model",
+            "name": "model",
+            "type": "BaseChatModel",
+            "id": "conversationalRetrievalQAChain_0-input-model-BaseChatModel"
+          },
+          {
+            "label": "Vector Store Retriever",
+            "name": "vectorStoreRetriever",
+            "type": "BaseRetriever",
+            "id": "conversationalRetrievalQAChain_0-input-vectorStoreRetriever-BaseRetriever"
+          },
+          {
+            "label": "Memory",
+            "name": "memory",
+            "type": "BaseMemory",
+            "optional": true,
+            "description": "If left empty, a default BufferMemory will be used",
+            "id": "conversationalRetrievalQAChain_0-input-memory-BaseMemory"
+          },
+          {
+            "label": "Input Moderation",
+            "description": "Detect text that could generate harmful output and prevent it from being sent to the language model",
+            "name": "inputModeration",
+            "type": "Moderation",
+            "optional": true,
+            "list": true,
+            "id": "conversationalRetrievalQAChain_0-input-inputModeration-Moderation"
+          }
+        ],
+        "inputs": {
+          "inputModeration": "",
+          "model": "{{chatOpenRouter_0.data.instance}}",
+          "vectorStoreRetriever": "{{chroma_0.data.instance}}",
+          "memory": "",
+          "rephrasePrompt": "{context}\n\n---\n\nChat History:\n{chat_history}\n\n---\n\nGiven the context above, answer the question as best as possible.\n\nQuestion: {question}\n\nAnswer: ",
+          "responsePrompt": "{context}\n\n---\n\nGiven the context above, answer the question as best as possible.\n\nQuestion: {question}\n\nAnswer: ",
+          "returnSourceDocuments": true
+        },
+        "outputAnchors": [
+          {
+            "id": "conversationalRetrievalQAChain_0-output-conversationalRetrievalQAChain-ConversationalRetrievalQAChain|BaseChain|Runnable",
+            "name": "conversationalRetrievalQAChain",
+            "label": "ConversationalRetrievalQAChain",
+            "type": "ConversationalRetrievalQAChain | BaseChain | Runnable"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "selected": false,
+      "positionAbsolute": {
+        "x": 1709.6611290284686,
+        "y": 315.4265939602729
+      },
+      "dragging": false
+    },
+    {
+      "id": "ollamaEmbedding_0",
+      "position": {
+        "x": 794.4667676188898,
+        "y": 924.70854452639
+      },
+      "type": "customNode",
+      "data": {
+        "id": "ollamaEmbedding_0",
+        "label": "Ollama Embeddings",
+        "version": 1,
+        "name": "ollamaEmbedding",
+        "type": "OllamaEmbeddings",
+        "baseClasses": [
+          "OllamaEmbeddings",
+          "Embeddings"
+        ],
+        "category": "Embeddings",
+        "description": "Generate embeddings for a given text using open source model on Ollama",
+        "inputParams": [
+          {
+            "label": "Base URL",
+            "name": "baseUrl",
+            "type": "string",
+            "default": "http://localhost:11434",
+            "id": "ollamaEmbedding_0-input-baseUrl-string"
+          },
+          {
+            "label": "Model Name",
+            "name": "modelName",
+            "type": "string",
+            "placeholder": "llama2",
+            "id": "ollamaEmbedding_0-input-modelName-string"
+          },
+          {
+            "label": "Number of GPU",
+            "name": "numGpu",
+            "type": "number",
+            "description": "The number of layers to send to the GPU(s). On macOS it defaults to 1 to enable metal support, 0 to disable. Refer to <a target=\"_blank\" href=\"https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values\">docs</a> for more details",
+            "step": 1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "ollamaEmbedding_0-input-numGpu-number"
+          },
+          {
+            "label": "Number of Thread",
+            "name": "numThread",
+            "type": "number",
+            "description": "Sets the number of threads to use during computation. By default, Ollama will detect this for optimal performance. It is recommended to set this value to the number of physical CPU cores your system has (as opposed to the logical number of cores). Refer to <a target=\"_blank\" href=\"https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values\">docs</a> for more details",
+            "step": 1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "ollamaEmbedding_0-input-numThread-number"
+          },
+          {
+            "label": "Use MMap",
+            "name": "useMMap",
+            "type": "boolean",
+            "default": true,
+            "optional": true,
+            "additionalParams": true,
+            "id": "ollamaEmbedding_0-input-useMMap-boolean"
+          }
+        ],
+        "inputAnchors": [],
+        "inputs": {
+          "baseUrl": "http://host.docker.internal:11434",
+          "modelName": "mxbai-embed-large",
+          "numGpu": "",
+          "numThread": "",
+          "useMMap": true
+        },
+        "outputAnchors": [
+          {
+            "id": "ollamaEmbedding_0-output-ollamaEmbedding-OllamaEmbeddings|Embeddings",
+            "name": "ollamaEmbedding",
+            "label": "OllamaEmbeddings",
+            "description": "Generate embeddings for a given text using open source model on Ollama",
+            "type": "OllamaEmbeddings | Embeddings"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 431,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 794.4667676188898,
+        "y": 924.70854452639
+      },
+      "dragging": false
+    },
+    {
+      "id": "chroma_0",
+      "position": {
+        "x": 1209.125356825743,
+        "y": 678.4629016327898
+      },
+      "type": "customNode",
+      "data": {
+        "id": "chroma_0",
+        "label": "Chroma",
+        "version": 2,
+        "name": "chroma",
+        "type": "Chroma",
+        "baseClasses": [
+          "Chroma",
+          "VectorStoreRetriever",
+          "BaseRetriever"
+        ],
+        "category": "Vector Stores",
+        "description": "Upsert embedded data and perform similarity search upon query using Chroma, an open-source embedding database",
+        "inputParams": [
+          {
+            "label": "Connect Credential",
+            "name": "credential",
+            "type": "credential",
+            "description": "Only needed if you have chroma on cloud services with X-Api-key",
+            "optional": true,
+            "credentialNames": [
+              "chromaApi"
+            ],
+            "id": "chroma_0-input-credential-credential"
+          },
+          {
+            "label": "Collection Name",
+            "name": "collectionName",
+            "type": "string",
+            "id": "chroma_0-input-collectionName-string"
+          },
+          {
+            "label": "Chroma URL",
+            "name": "chromaURL",
+            "type": "string",
+            "optional": true,
+            "id": "chroma_0-input-chromaURL-string"
+          },
+          {
+            "label": "Chroma Metadata Filter",
+            "name": "chromaMetadataFilter",
+            "type": "json",
+            "optional": true,
+            "additionalParams": true,
+            "id": "chroma_0-input-chromaMetadataFilter-json"
+          },
+          {
+            "label": "Top K",
+            "name": "topK",
+            "description": "Number of top results to fetch. Default to 4",
+            "placeholder": "4",
+            "type": "number",
+            "additionalParams": true,
+            "optional": true,
+            "id": "chroma_0-input-topK-number"
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Document",
+            "name": "document",
+            "type": "Document",
+            "list": true,
+            "optional": true,
+            "id": "chroma_0-input-document-Document"
+          },
+          {
+            "label": "Embeddings",
+            "name": "embeddings",
+            "type": "Embeddings",
+            "id": "chroma_0-input-embeddings-Embeddings"
+          },
+          {
+            "label": "Record Manager",
+            "name": "recordManager",
+            "type": "RecordManager",
+            "description": "Keep track of the record to prevent duplication",
+            "optional": true,
+            "id": "chroma_0-input-recordManager-RecordManager"
+          }
+        ],
+        "inputs": {
+          "document": [
+            "{{textFile_0.data.instance}}",
+            "{{textFile_1.data.instance}}"
+          ],
+          "embeddings": "{{ollamaEmbedding_0.data.instance}}",
+          "recordManager": "",
+          "collectionName": "collection_1024d_mxbai_embed_large",
+          "chromaURL": "http://host.docker.internal:8000",
+          "chromaMetadataFilter": "",
+          "topK": ""
+        },
+        "outputAnchors": [
+          {
+            "name": "output",
+            "label": "Output",
+            "type": "options",
+            "description": "",
+            "options": [
+              {
+                "id": "chroma_0-output-retriever-Chroma|VectorStoreRetriever|BaseRetriever",
+                "name": "retriever",
+                "label": "Chroma Retriever",
+                "description": "",
+                "type": "Chroma | VectorStoreRetriever | BaseRetriever"
+              },
+              {
+                "id": "chroma_0-output-vectorStore-Chroma|VectorStore",
+                "name": "vectorStore",
+                "label": "Chroma Vector Store",
+                "description": "",
+                "type": "Chroma | VectorStore"
+              }
+            ],
+            "default": "retriever"
+          }
+        ],
+        "outputs": {
+          "output": "retriever"
+        },
+        "selected": false
+      },
+      "width": 300,
+      "height": 705,
+      "selected": false,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": 1209.125356825743,
+        "y": 678.4629016327898
+      }
+    },
+    {
+      "id": "textFile_1",
+      "position": {
+        "x": 799.7942869663017,
+        "y": -179.8638001702385
+      },
+      "type": "customNode",
+      "data": {
+        "id": "textFile_1",
+        "label": "Text File",
+        "version": 3,
+        "name": "textFile",
+        "type": "Document",
+        "baseClasses": [
+          "Document"
+        ],
+        "category": "Document Loaders",
+        "description": "Load data from text files",
+        "inputParams": [
+          {
+            "label": "Txt File",
+            "name": "txtFile",
+            "type": "file",
+            "fileType": ".txt, .html, .aspx, .asp, .cpp, .c, .cs, .css, .go, .h, .java, .js, .less, .ts, .php, .proto, .python, .py, .rst, .ruby, .rb, .rs, .scala, .sc, .scss, .sol, .sql, .swift, .markdown, .md, .tex, .ltx, .vb, .xml",
+            "id": "textFile_1-input-txtFile-file"
+          },
+          {
+            "label": "Additional Metadata",
+            "name": "metadata",
+            "type": "json",
+            "description": "Additional metadata to be added to the extracted documents",
+            "optional": true,
+            "additionalParams": true,
+            "id": "textFile_1-input-metadata-json"
+          },
+          {
+            "label": "Omit Metadata Keys",
+            "name": "omitMetadataKeys",
+            "type": "string",
+            "rows": 4,
+            "description": "Each document loader comes with a default set of metadata keys that are extracted from the document. You can use this field to omit some of the default metadata keys. The value should be a list of keys, seperated by comma. Use * to omit all metadata keys execept the ones you specify in the Additional Metadata field",
+            "placeholder": "key1, key2, key3.nestedKey1",
+            "optional": true,
+            "additionalParams": true,
+            "id": "textFile_1-input-omitMetadataKeys-string"
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Text Splitter",
+            "name": "textSplitter",
+            "type": "TextSplitter",
+            "optional": true,
+            "id": "textFile_1-input-textSplitter-TextSplitter"
+          }
+        ],
+        "inputs": {
+          "textSplitter": "{{recursiveCharacterTextSplitter_0.data.instance}}",
+          "metadata": "",
+          "omitMetadataKeys": ""
+        },
+        "outputAnchors": [
+          {
+            "name": "output",
+            "label": "Output",
+            "type": "options",
+            "description": "Array of document objects containing metadata and pageContent",
+            "options": [
+              {
+                "id": "textFile_1-output-document-Document|json",
+                "name": "document",
+                "label": "Document",
+                "description": "Array of document objects containing metadata and pageContent",
+                "type": "Document | json"
+              },
+              {
+                "id": "textFile_1-output-text-string|json",
+                "name": "text",
+                "label": "Text",
+                "description": "Concatenated string from pageContent of documents",
+                "type": "string | json"
+              }
+            ],
+            "default": "document"
+          }
+        ],
+        "outputs": {
+          "output": "document"
+        },
+        "selected": false
+      },
+      "width": 300,
+      "height": 440,
+      "selected": false,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": 799.7942869663017,
+        "y": -179.8638001702385
+      }
+    },
+    {
+      "id": "recursiveCharacterTextSplitter_0",
+      "position": {
+        "x": 401.69360185078557,
+        "y": -43.13332364424696
+      },
+      "type": "customNode",
+      "data": {
+        "id": "recursiveCharacterTextSplitter_0",
+        "label": "Recursive Character Text Splitter",
+        "version": 2,
+        "name": "recursiveCharacterTextSplitter",
+        "type": "RecursiveCharacterTextSplitter",
+        "baseClasses": [
+          "RecursiveCharacterTextSplitter",
+          "TextSplitter",
+          "BaseDocumentTransformer",
+          "Runnable"
+        ],
+        "category": "Text Splitters",
+        "description": "Split documents recursively by different characters - starting with \"\\n\\n\", then \"\\n\", then \" \"",
+        "inputParams": [
+          {
+            "label": "Chunk Size",
+            "name": "chunkSize",
+            "type": "number",
+            "description": "Number of characters in each chunk. Default is 1000.",
+            "default": 1000,
+            "optional": true,
+            "id": "recursiveCharacterTextSplitter_0-input-chunkSize-number"
+          },
+          {
+            "label": "Chunk Overlap",
+            "name": "chunkOverlap",
+            "type": "number",
+            "description": "Number of characters to overlap between chunks. Default is 200.",
+            "default": 200,
+            "optional": true,
+            "id": "recursiveCharacterTextSplitter_0-input-chunkOverlap-number"
+          },
+          {
+            "label": "Custom Separators",
+            "name": "separators",
+            "type": "string",
+            "rows": 4,
+            "description": "Array of custom separators to determine when to split the text, will override the default separators",
+            "placeholder": "[\"|\", \"##\", \">\", \"-\"]",
+            "additionalParams": true,
+            "optional": true,
+            "id": "recursiveCharacterTextSplitter_0-input-separators-string"
+          }
+        ],
+        "inputAnchors": [],
+        "inputs": {
+          "chunkSize": 1000,
+          "chunkOverlap": 200,
+          "separators": ""
+        },
+        "outputAnchors": [
+          {
+            "id": "recursiveCharacterTextSplitter_0-output-recursiveCharacterTextSplitter-RecursiveCharacterTextSplitter|TextSplitter|BaseDocumentTransformer|Runnable",
+            "name": "recursiveCharacterTextSplitter",
+            "label": "RecursiveCharacterTextSplitter",
+            "description": "Split documents recursively by different characters - starting with \"\\n\\n\", then \"\\n\", then \" \"",
+            "type": "RecursiveCharacterTextSplitter | TextSplitter | BaseDocumentTransformer | Runnable"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 431,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 401.69360185078557,
+        "y": -43.13332364424696
+      },
+      "dragging": false
+    },
+    {
+      "id": "chatOpenRouter_0",
+      "position": {
+        "x": 1218.263497826926,
+        "y": -149.30051718207582
+      },
+      "type": "customNode",
+      "data": {
+        "id": "chatOpenRouter_0",
+        "label": "ChatOpenRouter",
+        "version": 1,
+        "name": "chatOpenRouter",
+        "type": "ChatOpenRouter",
+        "baseClasses": [
+          "ChatOpenRouter",
+          "BaseChatModel",
+          "BaseLanguageModel",
+          "Runnable"
+        ],
+        "category": "Chat Models",
+        "description": "Wrapper around Open Router Inference API",
+        "inputParams": [
+          {
+            "label": "Connect Credential",
+            "name": "credential",
+            "type": "credential",
+            "credentialNames": [
+              "openRouterApi"
+            ],
+            "optional": true,
+            "id": "chatOpenRouter_0-input-credential-credential"
+          },
+          {
+            "label": "Model Name",
+            "name": "modelName",
+            "type": "string",
+            "placeholder": "openai/gpt-3.5-turbo",
+            "id": "chatOpenRouter_0-input-modelName-string"
+          },
+          {
+            "label": "Temperature",
+            "name": "temperature",
+            "type": "number",
+            "step": 0.1,
+            "default": 0.9,
+            "optional": true,
+            "id": "chatOpenRouter_0-input-temperature-number"
+          },
+          {
+            "label": "Streaming",
+            "name": "streaming",
+            "type": "boolean",
+            "default": true,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOpenRouter_0-input-streaming-boolean"
+          },
+          {
+            "label": "Max Tokens",
+            "name": "maxTokens",
+            "type": "number",
+            "step": 1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOpenRouter_0-input-maxTokens-number"
+          },
+          {
+            "label": "Top Probability",
+            "name": "topP",
+            "type": "number",
+            "step": 0.1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOpenRouter_0-input-topP-number"
+          },
+          {
+            "label": "Frequency Penalty",
+            "name": "frequencyPenalty",
+            "type": "number",
+            "step": 0.1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOpenRouter_0-input-frequencyPenalty-number"
+          },
+          {
+            "label": "Presence Penalty",
+            "name": "presencePenalty",
+            "type": "number",
+            "step": 0.1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOpenRouter_0-input-presencePenalty-number"
+          },
+          {
+            "label": "Timeout",
+            "name": "timeout",
+            "type": "number",
+            "step": 1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOpenRouter_0-input-timeout-number"
+          },
+          {
+            "label": "BasePath",
+            "name": "basepath",
+            "type": "string",
+            "optional": true,
+            "default": "https://openrouter.ai/api/v1",
+            "additionalParams": true,
+            "id": "chatOpenRouter_0-input-basepath-string"
+          },
+          {
+            "label": "BaseOptions",
+            "name": "baseOptions",
+            "type": "json",
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOpenRouter_0-input-baseOptions-json"
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Cache",
+            "name": "cache",
+            "type": "BaseCache",
+            "optional": true,
+            "id": "chatOpenRouter_0-input-cache-BaseCache"
+          }
+        ],
+        "inputs": {
+          "cache": "",
+          "modelName": "google/gemini-2.0-flash-lite-001",
+          "temperature": 0.9,
+          "streaming": true,
+          "maxTokens": "",
+          "topP": "",
+          "frequencyPenalty": "",
+          "presencePenalty": "",
+          "timeout": "",
+          "basepath": "https://openrouter.ai/api/v1",
+          "baseOptions": ""
+        },
+        "outputAnchors": [
+          {
+            "id": "chatOpenRouter_0-output-chatOpenRouter-ChatOpenRouter|BaseChatModel|BaseLanguageModel|Runnable",
+            "name": "chatOpenRouter",
+            "label": "ChatOpenRouter",
+            "description": "Wrapper around Open Router Inference API",
+            "type": "ChatOpenRouter | BaseChatModel | BaseLanguageModel | Runnable"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 577,
+      "selected": false,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": 1218.263497826926,
+        "y": -149.30051718207582
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "chroma_0",
+      "sourceHandle": "chroma_0-output-retriever-Chroma|VectorStoreRetriever|BaseRetriever",
+      "target": "conversationalRetrievalQAChain_0",
+      "targetHandle": "conversationalRetrievalQAChain_0-input-vectorStoreRetriever-BaseRetriever",
+      "type": "buttonedge",
+      "id": "chroma_0-chroma_0-output-retriever-Chroma|VectorStoreRetriever|BaseRetriever-conversationalRetrievalQAChain_0-conversationalRetrievalQAChain_0-input-vectorStoreRetriever-BaseRetriever"
+    },
+    {
+      "source": "ollamaEmbedding_0",
+      "sourceHandle": "ollamaEmbedding_0-output-ollamaEmbedding-OllamaEmbeddings|Embeddings",
+      "target": "chroma_0",
+      "targetHandle": "chroma_0-input-embeddings-Embeddings",
+      "type": "buttonedge",
+      "id": "ollamaEmbedding_0-ollamaEmbedding_0-output-ollamaEmbedding-OllamaEmbeddings|Embeddings-chroma_0-chroma_0-input-embeddings-Embeddings"
+    },
+    {
+      "source": "recursiveCharacterTextSplitter_0",
+      "sourceHandle": "recursiveCharacterTextSplitter_0-output-recursiveCharacterTextSplitter-RecursiveCharacterTextSplitter|TextSplitter|BaseDocumentTransformer|Runnable",
+      "target": "textFile_1",
+      "targetHandle": "textFile_1-input-textSplitter-TextSplitter",
+      "type": "buttonedge",
+      "id": "recursiveCharacterTextSplitter_0-recursiveCharacterTextSplitter_0-output-recursiveCharacterTextSplitter-RecursiveCharacterTextSplitter|TextSplitter|BaseDocumentTransformer|Runnable-textFile_1-textFile_1-input-textSplitter-TextSplitter"
+    },
+    {
+      "source": "textFile_1",
+      "sourceHandle": "textFile_1-output-document-Document|json",
+      "target": "chroma_0",
+      "targetHandle": "chroma_0-input-document-Document",
+      "type": "buttonedge",
+      "id": "textFile_1-textFile_1-output-document-Document|json-chroma_0-chroma_0-input-document-Document"
+    },
+    {
+      "source": "chatOpenRouter_0",
+      "sourceHandle": "chatOpenRouter_0-output-chatOpenRouter-ChatOpenRouter|BaseChatModel|BaseLanguageModel|Runnable",
+      "target": "conversationalRetrievalQAChain_0",
+      "targetHandle": "conversationalRetrievalQAChain_0-input-model-BaseChatModel",
+      "type": "buttonedge",
+      "id": "chatOpenRouter_0-chatOpenRouter_0-output-chatOpenRouter-ChatOpenRouter|BaseChatModel|BaseLanguageModel|Runnable-conversationalRetrievalQAChain_0-conversationalRetrievalQAChain_0-input-model-BaseChatModel"
+    }
+  ]
+}
