@@ -176,5 +176,5 @@ In the playground, you can now ask questions about the data you ingested. For ex
 When done with the langflow, you can stop the server by pressing `CTRL + C` in the terminal window where it is running (the one that displays the message below):
 ```
 Welcome to Langflow
-🟢 Open Langflow → http://0.0.0.0:7862
+🟢 Open Langflow → http://0.0.0.0:7860
 ```
