@@ -164,8 +164,8 @@ Before we start running this flow in playground we need to ingest some data into
 2. Open the flow and upload the file.
 3. Find the "Load dataflow" follow connections all the way to the Vector DB block and click on the "Run component" play button.
 
-**Issue**: `Error Building Component. Error building Component File: File or directory not found: ~/.langflow/077f0788-658c-4ee3-8966-b65f594f81e4/6e7e7cff-5288-49a7-9c6f-7e4c221cb805.txt`
-**Workaround**: `code ~/.langflow/077f0788-658c-4ee3-8966-b65f594f81e4/6e7e7cff-5288-49a7-9c6f-7e4c221cb805.txt` and copy paste text into this file from the downloaded file.
+**Issue**: `Error Building Component. Error building Component File: File or directory not found: ~/.langflow/077f0788-658c-4ee3-8966-b65f594f81e4/6e7e7cff-5288-49a7-9c6f-7e4c221cb805.txt` 
+**Workaround**: In the LangFlow UI press top right bell button to see the error and the full file path. Open the file in the error message `code ~/.langflow/077f0788-658c-4ee3-8966-b65f594f81e4/6e7e7cff-5288-49a7-9c6f-7e4c221cb805.txt` and copy paste text into this file from the downloaded [file](../pg1661.txt).
 
 #### Playground
 Check if ollama application is running by running `ollama ps` command in your terminal and you should see an empty list.
