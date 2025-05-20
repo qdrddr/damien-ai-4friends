@@ -5,8 +5,7 @@ This guide intends to help you get started with AI faster for:
 - Follow instructions from [README.md](../README.md)
 - Install [Visual Studio Code](https://code.visualstudio.com/download) (VS Code) 
 - Install [uv](https://docs.astral.sh/uv/getting-started/installation/) on your computer using the [instructions](#uv-installation) below
-
-
+- Once Docker Desktop app is installed, open it in the top center search bar type "Chromadb" and select "Chroma" and click on the "Run" button, on the popup "Run a new container" window expand the "Optional Settings" and in the "Container Name" enter `chromadb`, and in the Ports section set "Host port" to `8000` and click on the "Run" button.
 
 # CLI tools
 Command Line Interface (CLI) tools are used to interact with your computer's operating system and perform various tasks in a terminal by typing commands.
