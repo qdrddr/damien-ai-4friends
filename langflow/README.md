@@ -104,7 +104,7 @@ mkdir -p ~/.langflow
 langflow run --host 0.0.0.0 --port 7860 --env-file langflow/.env
 # Wait for the server to start and then open the browser, it can take a minute. It'll display a message like this when ready:
 # Welcome to Langflow
-# 🟢 Open Langflow → http://0.0.0.0:7862
+# 🟢 Open Langflow → http://0.0.0.0:7860
 
 # We are ready to go! Open the browser and navigate to http://localhost:7860
 ```
@@ -122,7 +122,7 @@ uv pip install -r langflow/requirements.txt
 RAG stands for Retrieval-Augmented Generation. It is a technique that combines the power of searching chunks (blocks of text, think of them as paragraphs) of documents with AI models to improve the results of language tasks.
 
 1. Open browser and navigate to http://localhost:7860
-2. Press create Flow,
+2. Press create Flow
 3. Select "Vector Store RAG"
 4. In the left hand side, expand "Components" and search for Ollama, then drag "Ollama Embeddings" and replace OpenAI Embeddings blocks. Check if ollama application is running by running `ollama ps` command in your terminal and you should see an empty list.
 5. In the Ollama Embedding block, set the BASE URL to `http://localhost:11434` and the MODEL NAME to `mxbai-embed-large`

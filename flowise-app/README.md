@@ -24,7 +24,7 @@ mkdir -p ~/.flowise
 docker compose -f flowise-app/docker-compose.yaml up -d
 ```
 
-3. Open the browser and navigate to http://localhost:3003
+3. Open the browser and navigate to http://localhost:3000
 
 # In the Flowise web interface
 
