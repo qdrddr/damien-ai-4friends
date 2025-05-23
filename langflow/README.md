@@ -115,7 +115,10 @@ Now lets find most recent [langflow](https://github.com/langflow-ai/langflow) ve
 source .venv/bin/activate
 # install all the modules from requirements.txt file in the langflow directory
 uv pip install -r langflow/requirements.txt 
+# And run the langflow again.
+langflow run --host 0.0.0.0 --port 7860 --env-file langflow/.env
 ```
+
 
 ### Working with LangFlow in Browser
 
