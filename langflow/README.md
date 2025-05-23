@@ -53,6 +53,7 @@ powershell -c "irm https://astral.sh/uv/install.ps1 | more"
 Open terminal application. Then run the following command in the terminal window:
 ```shell
 mkdir -p ~/git
+cd ~/git
 git clone https://github.com/qdrddr/damien-ai-4friends
 cd ~/git/damien-ai-4friends
 # print the current directory
@@ -109,7 +110,7 @@ langflow run --host 0.0.0.0 --port 7860 --env-file langflow/.env
 # We are ready to go! Open the browser and navigate to http://localhost:7860
 ```
 ### Update LangFlow version
-Now lets find most recent [langflow](https://github.com/langflow-ai/langflow) version in the Release section. For example you might see `1.4.2`. now replace the version in the `langflow===1.4.1` line in the `langflow/requirements.txt` file with the latest version you found in the Release section. Then run the following command in the terminal window:
+Now lets find most recent [langflow](https://github.com/langflow-ai/langflow) version in the Release section. For example you might see `1.4.2`. now replace the version in the `langflow===1.4.1` line in the `langflow/requirements.txt` file with the latest version you found in the Release section. If the langflow running, interrupt it with `CTRL + C`. Then run the following command in the terminal window:
 ```shell
 source .venv/bin/activate
 # install all the modules from requirements.txt file in the langflow directory
