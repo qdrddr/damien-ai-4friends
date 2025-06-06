@@ -9,12 +9,12 @@ This guide is intended to help you get started with AI faster for:
 
 # Steps
 
-1. Open your browser and search for the latest stable version of ChromaDB `image: chromadb/chroma:1.0.8` and replace the version in the [flowise-app/docker-compose.yaml](docker-compose.yaml) file with the latest version you found on Docker Hub. Open the docker-compose.yaml file in any text editor of your choice. Example: `image: chromadb/chroma:1.0.9`
-2. Open your browser and search for the latest version of Flowise `image: flowiseai/flowise:2.2.5` and replace the version in the [flowise-app/docker-compose.yaml](docker-compose.yaml) file with the latest version you found on Docker Hub. Open the docker-compose.yaml file in any text editor of your choice. Example: `image: flowiseai/flowise:2.2.8`
+1. Open your browser and search for the [latest stable version of ChromaDB](https://hub.docker.com/r/chromadb/chroma/tags) `image: chromadb/chroma:1.0.8` and replace the version (tag) in the [flowise-app/docker-compose.yaml](docker-compose.yaml) file with the latest version you found on Docker Hub. Open the docker-compose.yaml file in any text editor of your choice. Example: `image: chromadb/chroma:1.0.9`
+2. Open your browser and search for the [latest version of Flowise](https://hub.docker.com/r/flowiseai/flowise/tags) `image: flowiseai/flowise:2.2.5` and replace the version (tag) in the [flowise-app/docker-compose.yaml](docker-compose.yaml) file with the latest version you found on Docker Hub. Open the docker-compose.yaml file in any text editor of your choice. Example: `image: flowiseai/flowise:2.2.8`
 3. Open the `.env` file with any text editor and update `PORT=3000` to `PORT=3003`.
 4. Open the terminal and navigate to the `flowise-app` directory you created in your home directory.
 ```shell
-# Create an empty directory for Flowise config files (note the dot symbol in the name):
+# Create an empty directory for Flowise *config files* (note the dot symbol in the name):
 mkdir -p ~/.flowise
 
 # In the terminal window (Powershell on Windows), run the following command:
