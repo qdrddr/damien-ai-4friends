@@ -39,15 +39,16 @@ docker compose -f flowise-app/docker-compose.yaml up -d
 12. If the above does not work, you can import my [flowise-app/flow1_Chatflow.json](flow1_Chatflow.json) file in the flowise directory. Create a new empty Chatflow: at the top right, click the Gear/Settings button and select "Load Chatflow" and select the `flow1_Chatflow.json` file from the flowise directory. Use this as a last resort only.
 
 ### About host.docker.internal
-Since Flowise is running in a Docker container, it is containerized, meaning it is isolated from the host where it is running. Therefore, it cannot access the host network directly, such as Ollama. As far as Flowise is concerned, Ollama is running on a separate computer. The `host.docker.internal` is a special DNS name that resolves to the internal IP address used by localhost. This allows the Flowise container to access the host network where it is running. Ollama is running on the host network at http://localhost:11434 on your computer, and therefore Flowise in a container can access Ollama by using the `host.docker.internal` DNS name instead of `localhost`.
+Since Flowise app is running in a Docker container, it is containerized, meaning it is isolated from the host where it is running. Therefore, it cannot access the host network directly, such as Ollama. As far as Flowise is concerned, Ollama is running on a separate computer. The `host.docker.internal` is a special DNS name that resolves to the internal IP address used by Ollama on localhost. This allows the Flowise container to access the host where it is running and access it via network. Ollama is running on the host network at http://localhost:11434 on your computer, and therefore Flowise in a container can access Ollama by using the `host.docker.internal` DNS name instead of `localhost`.
 
-## Ingestion
+## Ingestion Pipeline
+This pipeline executed by the developer to add data to a database. Later that data will be used by the chat pipeline:
 1. Find any text document you like. Example: The Adventures of Sherlock Holmes by Arthur Conan Doyle.
 2. Open the flow and upload the file.
 3. Find the "Upsert Vector Database" green circular button on the top right-hand side of the page, click on it, and in the opened window press the "Upsert" button.
 4. Wait for the ingestion to complete. You should see a green checkmark on the "Run component" button.
 
-## Chat
-
-On the top right-hand side of the page, click on the "Chat" button and start chatting with the AI model.
-Ask something like `What context do you have?` or `What is the document about?`
+## Chat Pipeline
+This pipeline executed each time a user ask a question in the chat:
+1. On the top right-hand side of the page, click on the "Chat" button and start chatting with the AI model.
+2. Ask something like `What context do you have?` or `What is the document about?`
