@@ -63,9 +63,3 @@ The Project-based MCP config will only apply those MCP Servers for your currentl
 - On the "MCP Servers" you can temporarily disable some MCP Servers that is handy when you have too many MCP Servers and tools. Try to keep a few MCP Servers enabled (no more than 50-100 tools), which approximately no more than 5-10 MCP Servers. 
 - Update the `mcp_settings.json` config file using example below
 
-#### 5. **Update mcpServers.json**
-
-Open the [`mcpServers.json`](../mcpServers.json) example config file and upfdate:
-- **OpenMemory/Cloud:** OPENMEMORY_API_KEY with your key
-- **Linkedin-my12345:** Composio with your URL that begins with https://mcp.composio.dev/composio/server
-- **filesystem:** with the correct full paths on your local computer 
