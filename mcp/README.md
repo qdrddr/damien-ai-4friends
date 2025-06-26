@@ -1,6 +1,6 @@
 # 🧠 Learning Lesson: Getting Started with MCP
 
-- **SuperGateway** - Converts between STDIO and HTTP-based transports (SSE, StreamableHttp, WebSockets) **Before diving into the practical setup, make sure to read this essential [article](https://medium.com/qdrddr/0c02f3915867) that covers the basics of MCP.** The concepts explained in the article will help you understand the practical steps in this guide.
+- **Before diving into the practical setup, make sure to read this essential [article](https://medium.com/qdrddr/0c02f3915867) that covers the basics of MCP.** The concepts explained in the article will help you understand the practical steps in this guide.
 
 ## 🚀 What You'll Learn
 
