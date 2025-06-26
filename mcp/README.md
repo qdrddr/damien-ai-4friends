@@ -53,7 +53,7 @@ Same goes to MCP Clients, which may not speak MCP Server's language, that's wher
 
 To run MCP Servers locally you'll need these tools installed:
 - Locally with [`npm`/`npx`](https://github.com/npm/cli), [`uv`/`uvx`/`pip`](https://docs.astral.sh/uv/getting-started/installation/). Note when you install `uv` it also has `uvx`, and `npm` has build-in `npx`. Most of the commands starting with `pip` can be replaced with `uv pip` or `uvx`. Most of the time installed like this MCP Servers support STDIO-only but may support SSE or even Streamable-HTTP transports.
-- In containers ([Docker](https://www.docker.com/products/docker-desktop/)/[Podman](https://podman-desktop.io/downloads))
+- In containers ([Docker](https://www.docker.com/products/docker-desktop/) ([docs](https://docs.docker.com/get-started/get-docker/)) / [Podman](https://podman-desktop.io/downloads))
 - Via MCP Toolkit (Docker Desktop extension)
 
 To prepare for this please go ahead and install Docker Desktop, `npm` and `uv` on your local computer.
