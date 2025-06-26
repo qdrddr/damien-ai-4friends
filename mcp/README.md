@@ -10,6 +10,7 @@ By the end of this lesson, you'll be able to:
 - Connect MCP Client to local and cloud-based MCP Servers
 - Understand transport protocols and proxies
 - Be aware of MCP's limitations
+- Will take aproximatelly 20 minutes
 
 ---
 

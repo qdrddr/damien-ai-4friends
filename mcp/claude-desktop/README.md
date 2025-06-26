@@ -7,6 +7,7 @@ By the end of this lesson, you'll be able to:
 - Set up **RooCode Extension** as an MCP Client
 - Connect RooCode to local and cloud-based MCP Servers
 - Use `claude_desktop_config.json` configuration
+- Will take aproximatelly 20 minutes
 
 ## 🖥️ Claude Desktop
 

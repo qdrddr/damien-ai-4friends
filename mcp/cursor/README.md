@@ -7,6 +7,7 @@ By the end of this lesson, you'll be able to:
 - Set up **Cursor** as an MCP Client
 - Connect Cursor to local and cloud-based MCP Servers
 - Use `mcp.json` configuration
+- Will take aproximatelly 20 minutes
 
 ## 🖥️ Cursor
 
