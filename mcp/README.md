@@ -92,6 +92,6 @@ Most notable limitations:
 
 # Choose your MCP Client to continue
 
-- [Cursor](./cursor)
-- [Roo Code (VS Code Extension)](./roocode)
-- [Anthropic Claude Desktop](./claude-desktop)
+- [Cursor](./cursor) - for Developers
+- [Roo Code (VS Code Extension)](./roocode) - for Developers
+- [Anthropic Claude Desktop](./claude-desktop) - for General Public
