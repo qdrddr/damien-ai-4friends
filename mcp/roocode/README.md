@@ -29,7 +29,7 @@ Go to [Code.VisualStudio.com](https://code.visualstudio.com/Download) and instal
 Go to [Marketplace.VisualStudio](https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline) and install RooCode Extension for your VS Code IDE. Alternatively use the Extension button in VS Code on the left hand side the four cubes icon with one of the top right cube falling off and search for RooCode. Press `Install` button.
 
 ### 3. **Local MCP Servers Requirements**
-In the previous guide you prepared by installing these utils, if you didn't, follow the previous step in [README.md](../README.md):
+In the previous guide you prepared by installing these utils, if you didn't, follow the previous step in [README.md](../):
 - With `uv`, `npm`, `bun`.
 - Standalone Containers (may support STDIO, SSE or even Streamable-HTTP)
 - Via MCP Toolkit from Docker Desktop extension (supports STDIO protocol only)

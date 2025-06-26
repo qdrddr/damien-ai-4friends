@@ -26,7 +26,7 @@ Other supported developer-oriented MCP clients include: Cursor, Windsur, VS Code
 Go to [Claude Desktop](https://claude.ai/download) and install the app for your OS.
 
 ### 2. **Local MCP Servers Requirements**
-In the previous guide you prepared by installing these utils, if you didn't, follow the previous step in [README.md](../README.md):
+In the previous guide you prepared by installing these utils, if you didn't, follow the previous step in [README.md](../):
 - With `uv`, `npm`, `bun`.
 - Standalone Containers (may support STDIO, SSE or even Streamable-HTTP)
 - Via MCP Toolkit from Docker Desktop extension (supports STDIO protocol only)
