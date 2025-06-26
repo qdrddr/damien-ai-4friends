@@ -94,3 +94,4 @@ Most notable limitations:
 
 - [Cursor](./cursor)
 - [Roo Code (VS Code Extension)](./roocode)
+- [Anthropic Claude Desktop](./claude-desktop)

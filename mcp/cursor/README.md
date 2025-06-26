@@ -27,7 +27,7 @@ Go to [https://cursor.sh](https://cursor.sh) and install Cursor for your OS.
 
 ### 2. **Local MCP Servers Requirements**
 In the previous guide you prepared by installing these utils, if you didn't, follow the previous step in [README.md](../README.md):
-- With `uv`, `npm`.
+- With `uv`, `npm`, `bun`.
 - Standalone Containers (may support STDIO, SSE or even Streamable-HTTP)
 - Via MCP Toolkit from Docker Desktop extension (supports STDIO protocol only)
 
