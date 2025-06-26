@@ -16,4 +16,6 @@ Please ⭐️ Star this repo 😉
 
 # MCP Practical Guide
 0. Read my [blog post on Medium](https://medium.com/@qdrddr/0c02f3915867) to understand the basics of MCP and how it works.
-1. Continue with [MCP lessons](mcp/)
+2. Register on the [mcp.composio.dev](https://mcp.composio.dev/dashboard) and add one application such as Gmail, Google Drive, Google Docs, Google Googlesheets, MS Excel, MS One Drive, Linkedin, Dropbox, etc. Sopy the provided URL.
+3. Register with [OpenMemory.dev](https://openmemory.dev/) and get your API key [here](https://app.openmemory.dev/dashboard).
+4. Continue with [MCP lessons](mcp/)

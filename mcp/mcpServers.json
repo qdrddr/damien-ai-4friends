@@ -47,6 +47,21 @@
     "time": {
       "command": "uvx",
       "args": ["mcp-server-time"]
+    },
+    "Linkedin-my12345": {
+      "timeout": 60,
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.composio.dev/composio/server/XXXXXXXXXXXXXXXXXXXX/mcp?include_composio_helper_actions=true"
+      ],
+      "disabled": false,
+      "alwaysAllow": [
+        "COMPOSIO_CHECK_ACTIVE_CONNECTION",
+        "LINKEDIN_GET_MY_INFO"
+      ]
     }
   }
 }

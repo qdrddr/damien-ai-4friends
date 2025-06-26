@@ -50,3 +50,10 @@ Some online services have native MCP support (e.g. GitHub, Cloudflare).
 For the [Cloud OpenMemory](openmemory.dev), you'll need to register and create an [API key](https://app.openmemory.dev/dashboard).
 
 Example [configuration here](../mcpServers.json).
+
+#### 5. **Update mcpServers.json**
+
+Open the [`mcpServers.json`](../mcpServers.json) example config file and upfdate:
+- **OpenMemory/Cloud:** OPENMEMORY_API_KEY with your key
+- **Linkedin-my12345:** Composio with your URL that begins with https://mcp.composio.dev/composio/server
+- **filesystem:** with the correct full paths on your local computer
