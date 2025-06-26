@@ -1,0 +1,89 @@
+# 🧠 Learning Lesson: Getting Started with MCP
+
+- **SuperGateway** - Converts between STDIO and HTTP-based transports (SSE, StreamableHttp, WebSockets) **Before diving into the practical setup, make sure to read this essential [article](https://medium.com/qdrddr/0c02f3915867) that covers the theoretical foundations of MCP.** The concepts explained in the article will help you understand the practical steps in this guide.
+
+## 🚀 What You'll Learn
+
+By the end of this lesson, you'll be able to:
+
+- Understand what MCP is and why it's important
+- Connect MCP Client to local and cloud-based MCP Servers
+- Understand transport protocols and proxies
+- Be aware of MCP's limitations
+
+---
+
+## 📌 What is MCP?
+
+**Model Context Protocol (MCP)** allows Large Language Models (LLMs) to interact with your real-world data, applications, and tools by adding **context** they wouldn't otherwise know (e.g. your calendar, files, or CRM).
+
+MCP bridges LLMs and your environment through:
+
+- **MCP Servers** – Expose tools, resources, or data
+- **MCP Clients** – Interface for the LLM to talk to servers
+- **MCP Proxy** – Translates between server "languages": STDIO, SSE, streamable-HTTP
+
+> 💡 Think of MCP as giving ChatGPT or Claude access to your apps and tools in a controlled, programmable way.
+
+---
+
+## 🖥️ MCP Client
+
+**MCP Client** Is a software that can connect to MCP Servers to get their available tools and provide those tools to your LLM. It supports:
+
+- Consume in your custom code such as Python with [FastMCP module](https://github.com/modelcontextprotocol/python-sdk)
+- Or with User-Intergace-based applications such as: [Cursor](https://www.cursor.com/), [Windsur](https://windsurf.com/), VS Code with Copilot, [RooCode](https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline), [Cline](https://cline.bot/), [Continue](https://marketplace.visualstudio.com/items?itemName=Continue.continue).
+
+---
+
+## ⚙️ MCP Transport
+Each MCP Server may speak with one of a couple of these "languages" (MCP Transport Protocols). 
+
+- STDIO - typically with locally installed MCP Servers 
+- SSE - sometimes with locally installed MCP Servers, more often with cloud-based MCP Servers
+- Streamable-HTTP - sometimes with locally installed MCP Servers, more often with cloud-based MCP Servers
+
+### MCP Proxy
+Same goes to MCP Clients, which may not speak MCP Server's language, that's where you'll need MCP Proxy to translate:
+- **MCP-Remote** - Simple SSE -> STDIO proxy with auth
+- **MCP-Proxy** - For SSE ⇄ STDIO or SSE ⇄ StreamableHttp
+- **SuperGateway** - Converts between STDIO and HHTP-based transports (SSE, StreamableHttp, WebSockets)
+
+### 1. Locally running MCP Servers
+
+To run MCP Servers locally you'll need these tools installed:
+- Locally with [`npm`/`npx`](https://github.com/npm/cli), [`uv`/`uvx`/`pip`](https://docs.astral.sh/uv/getting-started/installation/). Note when you install `uv` it also has `uvx`, and `npm` has build-in `npx`. Most of the commands starting with `pip` can be replaced with `uv pip` or `uvx`. Most of the time installed like this MCP Servers support STDIO-only but may support SSE or even Streamable-HTTP transports.
+- In containers ([Docker](https://www.docker.com/products/docker-desktop/)/[Podman](https://podman-desktop.io/downloads))
+- Via MCP Toolkit (Docker Desktop extension)
+
+To prepare for this please go ahead and install Docker Desktop, `npm` and `uv` on your local computer.
+
+#### 1.1 **How uvx & npx work**
+If for example you need to use `mcp-server-time` MCP Server locally, with uvx you don't need to install it! That's the whole point of using uvx (just like npx).
+
+**`uvx mcp-server-time` will:**
+
+- Automatically download and install mcp-server-time in a temporary, isolated environment
+- Run it immediately
+- Clean up after execution (unless you specify otherwise)
+- This is similar to how `npx @mcp/filesystem` works - it downloads and runs the package without requiring a separate installation step.
+
+### 2. Remotely running MCP Servers
+From online services with native MCP support (e.g. GitHub, DeepWiki, [Cloudflare](https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/)).
+Some may support SSE only or streamable-HTTP only or both:
+- **SSE:** example https://mcp.deepwiki.com/sse (note /sse at the end indicating SSE protocol)
+- **Streamable-HTTP:** example https://mcp.context7.com/mcp (note /mcp at the end indicating StreamableHttp)
+- **Streamable-HTTP with Auth:** example https://api.githubcopilot.com/mcp/ [read more](https://github.com/github/github-mcp-server)
+
+In some cases Auth is not needed, like for example https://mcp.deepwiki.com/ that works as a public source of documentation that our MCP Clients only reads from the website while others require some form of Authentication using login & password, API keys. And OAuth dynamically can authenticate the user providing a more secure way to login.
+
+## 🚧 MCP's Limitations
+Most notable limitations:
+- Security: Prompt poisoning, code injection, tool shadowing, cleartext creds. OAuth partly solves this (if your app supports it), also Docker Desktop MCP Toolkit is a better solution that  cleartext config with credentials, but still not an enterprise solution.  
+- OAuth-only: if your application has a different Auth mechanism, then you probably going to store your credentials in cleartext.
+- Performance: Context-window and token limits. Each MCP Server may expose a dozen of tools. More than 20-50 tools can significantly decrease quality of LLM performance, therefore controlling how many MCP servers used is crucial (and unfortunately a manual task).
+
+# Choose your MCP Client to continue
+
+- [Cursor](./cursor)
+- [Roo Code (VS Code Extension)](./roocode)

@@ -1,0 +1,52 @@
+{
+  "mcpServers": {
+    "MCP_DOCKER": {
+      "disabled": false,
+      "timeout": 60,
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "alpine/socat", "STDIO", "TCP:host.docker.internal:8811"],
+      "transportType": "stdio"
+    },
+    "DeepWiki": {
+      "disabled": false,
+      "timeout": 15,
+      "url": "https://mcp.deepwiki.com/sse",
+      "transportType": "sse"
+    },
+    "OpenMemory/Cloud": {
+      "timeout": 60,
+      "command": "npx",
+      "args": [
+        "-y",
+        "openmemory"
+      ],
+      "env": {
+        "OPENMEMORY_API_KEY": "om-yourkey",
+        "CLIENT_NAME": "openmemory"
+      },
+      "transportType": "stdio",
+      "disabled": false,
+      "alwaysAllow": []
+    },
+    "netlify": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@netlify/mcp"
+      ]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/username/Desktop",
+        "/path/to/other/allowed/dir"
+      ]
+    },
+    "time": {
+      "command": "uvx",
+      "args": ["mcp-server-time"]
+    }
+  }
+}

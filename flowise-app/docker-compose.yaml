@@ -2,6 +2,8 @@ name: flowise
 services:
     flowise:
         image: flowiseai/flowise:2.2.5
+        env_file:
+        - env.txt
         restart: always
         environment:
             - PORT=${PORT}

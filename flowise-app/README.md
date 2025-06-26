@@ -1,5 +1,6 @@
 This guide is intended to help you get started with AI faster for:
 - Day-to-day computer tasks (Flowise)
+- You might need a mouse for this ;)
 
 # Requirements:
 - In your home directory on your local computer, create a directory called `flowise-app`.
@@ -27,12 +28,12 @@ docker compose -f flowise-app/docker-compose.yaml up -d
 ## Create Chatflow
 1. In the Flowise web interface, click on "Marketplace" on the left-hand sidebar and search for "QnA". Select "Flowise Docs QnA". In the top right corner of the page, click the "Use Template" button.
 2. On the top right-hand side of the page, click the "Save" button and give it a name like `flow1`. Note: on the top left you might see a circular yellow button "Sync Nodes" with two circular arrows; click on it to sync the nodes and save the flow again.
-3. On the top left-hand side of the page, click the blue "Plus" button and in the opened left menu, search for "Ollama". Select "Ollama Embeddings" and drag and drop it to the Chatflow canvas. In the Ollama Embeddings block, set the BASE URL to `http://host.docker.internal:11434` and the MODEL NAME to `mxbai-embed-large`.
-4. Replace the current "LocalAI Embeddings" block with the new one you just added.
-5. On the top left-hand side of the page, click the blue "Plus" button and in the opened left menu, search for "Chroma". Select "ChromaDB" and drag and drop it to the Chatflow canvas. In the ChromaDB block, set the BASE URL to `http://host.docker.internal:8000` and the Collection Name field to `collection_512d_mxbai_embed_large`.
-6. Replace the current "Faiss" block with the new one you just added.
+3. On the top left-hand side of the page, click the blue "Plus" button and in the opened left menu, search for "Ollama". Select "Ollama Embeddings" and drag and drop it to the Chatflow canvas. In the Ollama Embeddings block, set the BASE URL to `http://host.docker.internal:11434` and the MODEL NAME to `mxbai-embed-large` (`ollama list`).
+4. Replace the current "OpenAI Embeddings" block with the new one you just added.
+5. On the top left-hand side of the page, click the blue "Plus" button and in the opened left menu, search for "Chroma". Select "ChromaDB" and drag and drop it to the Chatflow canvas. In the ChromaDB block, set the Chroma URL to `http://host.docker.internal:8000` and the Collection Name field to `collection_512d_mxbai_embed_large`.
+6. Replace the current "Faiss" or "In-Memory Vector Store" block with the new one you just added.
 7. On the top left-hand side of the page, click the blue "Plus" button and in the opened left menu, search for "ChatOpenRouter". Drag and drop it to the Chatflow canvas. In the ChatOpenRouter block, set the Model name to `google/gemini-2.0-flash-lite-001`, click "Additional Parameters" and scroll to "BasePath". Set BasePath to `https://openrouter.ai/api/v1`.
-8. Replace the current "ChatOllama" block with the new one you just added.
+8. Replace the current "ChatOllama" or ChatOpenAI block with the new one you just added.
 9. On the top left-hand side of the page, click the blue "Plus" button and in the opened left menu, search for "Splitter", and select "Recursive Character Text Splitter". Drag and drop it to the Chatflow canvas. In the Recursive Character Text Splitter block, set the Chunk Size to `1000` and the Chunk Overlap to `200`.
 10. Replace the current "Character Text Splitter" block with the new one you just added.
 11. Press "Save Chatflow" on the top right. You should see a green checkmark in the "Chatflow Saved" popup at the bottom left.
