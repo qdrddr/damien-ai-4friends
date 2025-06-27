@@ -96,7 +96,7 @@ Most notable limitations:
 - OAuth-only: if your application has a different Auth mechanism, then you're probably going to store your credentials in cleartext.
 - Performance: Context-window and token limits. Each MCP Server may expose a dozen of tools. More than 20-50 tools can significantly decrease quality of LLM performance, therefore controlling how many MCP servers used is crucial (and unfortunately a manual task).
 
-# Choose your MCP Client to continue
+# Choose your MCP Client to continue the lesson
 
 - [Anthropic Claude Desktop](./claude-desktop) - for General Public
 - [Cursor](./cursor) - for Developers
