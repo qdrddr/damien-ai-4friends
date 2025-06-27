@@ -7,6 +7,7 @@ Please ⭐️ Star this repo 😉
 
 # Low-Code Guide:
 Follow these requirements:
+
 0. Read my [blog post on Medium](https://medium.com/@qdrddr/1a3393e0c3c9) to understand the basics of RAG and how it works.
 1. [Download & Install Docker Desktop](https://www.docker.com/products/docker-desktop/) ([docs](https://docs.docker.com/get-started/get-docker/)).
 2. Register with [OpenRouter](https://openrouter.ai/settings/credits), add $5 in credits, and [create an API Key](https://openrouter.ai/settings/keys).
@@ -17,6 +18,7 @@ Follow these requirements:
 
 # MCP Practical Guide
 Follow these requirements:
+
 0. Read my [blog post on Medium](https://medium.com/@qdrddr/0c02f3915867) to understand the basics of MCP and how it works.
 1. Register on the [mcp.composio.dev](https://mcp.composio.dev/dashboard) and add one application such as Gmail, Google Drive, Google Docs, Google Googlesheets, MS Excel, MS One Drive, Linkedin, Dropbox, etc. Sopy the provided URL.
 2. Register with [OpenMemory.dev](https://openmemory.dev/) and get your API key [here](https://app.openmemory.dev/dashboard).
