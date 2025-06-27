@@ -100,6 +100,5 @@ Most notable limitations:
 
 - [Anthropic Claude Desktop](./claude-desktop) - for General Public
 - [Cursor](./cursor) - for Developers
-- [VS Code](./vscode) - for Developers
 - [Roo Code (VS Code Extension)](./roocode) - for Developers
 - [VS Code Copilot Chat](./vscode) - for Developers
