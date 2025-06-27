@@ -102,3 +102,8 @@ Most notable limitations:
 - [Cursor](./cursor) - for Developers
 - [Roo Code (VS Code Extension)](./roocode) - for Developers
 - [VS Code Copilot Chat](./vscode) - for Developers
+
+# Optional
+Install one Low-Code Agentic RAG builder:
+- [Flowise](../flowise-app/) + external [MCP-Flowise Server](https://github.com/matthewhand/mcp-flowise)
+- [LangFlow](../langflow/) (MCP Server is build-in)
