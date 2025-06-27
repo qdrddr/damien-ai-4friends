@@ -85,7 +85,7 @@ In some cases Auth is not needed, like for example https://mcp.deepwiki.com/ tha
 
 ### 3. **Update mcpServers.json**
 
-Open the [`mcpServers.json`](../mcpServers.json) example config file and update:
+Open the [`mcpServers.json`](./mcpServers.json) example config file and update:
 - **OpenMemory/Cloud:** OPENMEMORY_API_KEY with your key. [Register](https://openmemory.dev) & get [API here](https://app.openmemory.dev/dashboard)
 - **Linkedin-my12345:** Composio with your URL that begins with `https://mcp.composio.dev/composio/server`. [Register](https://app.composio.dev/) and get the [URL here](https://mcp.composio.dev/dashboard) 
 - **filesystem:** with the correct full paths on your local computer 
