@@ -46,7 +46,7 @@ Each MCP Server may speak with one of a couple of these "languages" (MCP Transpo
 
 ### MCP Proxy
 Same goes to MCP Clients, which may not speak MCP Server's language, that's where you'll need MCP Proxy to translate:
-- **MCP-Remote** – Simple Streamable-HTTP & SSE → STDIO proxy with auth. Most of the time, your go-to choice since most MCP Clients support STDIO.
+- **MCP-Remote** – Simple Streamable-HTTP & SSE → STDIO proxy with auth. Your go-to first choice since most MCP Clients support STDIO.
 - **MCP-Proxy** - For SSE ⇄ STDIO or SSE ⇄ StreamableHttp
 - **SuperGateway** - Converts between STDIO and HHTP-based transports (SSE, StreamableHttp, WebSockets)
 
