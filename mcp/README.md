@@ -33,7 +33,7 @@ MCP bridges LLMs and your environment through:
 - **MCP Client** Is a software that can connect to MCP Servers to get their available tools and provide those tools to your LLM. It supports:
 
 - Consume in your custom code such as Python with [FastMCP module](https://github.com/modelcontextprotocol/python-sdk)
-- Or with User-Interface-based applications such as: [Cursor](https://www.cursor.com/), [Windsurf](https://windsurf.com/), [VS Code GitHub Copilot](https://github.com/features/copilot), VS Code with Copilot, [RooCode](https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline), [Cline](https://cline.bot/), [Continue](https://marketplace.visualstudio.com/items?itemName=Continue.continue).
+- Or with User-Interface-based applications such as: [Cursor](https://www.cursor.com/), [Windsurf](https://windsurf.com/), [VS Code GitHub Copilot](https://github.com/features/copilot), VS Code extentions: [RooCode](https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline), [Cline](https://cline.bot/), [Continue](https://marketplace.visualstudio.com/items?itemName=Continue.continue).
 
 ---
 
