@@ -33,7 +33,7 @@ In the previous guide you prepared by installing these utils, if you didn't, fol
 - Via MCP Toolkit from Docker Desktop extension (supports STDIO protocol only)
 
 #### 3 **Cloud MCP Servers**
-Some online services have native MCP support (e.g. GitHub, Cloudflare). But Claude Desktop does not support those, fortunately we can use MCP Proxy to fix that issue.
+Some online services have native MCP support (e.g. GitHub, Cloudflare). But Claude Desktop does not support those, fortunately we can use MCP Proxy such as `mcp-remote` to fix that issue.
 - https://api.githubcopilot.com/mcp/ (streamable-HTTP only, requires Authentication, [read more](https://github.com/github/github-mcp-server))
 - https://docs.mcp.cloudflare.com/sse (SSE transport only, no Auth), see [other Cloudflare's own MCP servers here](https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/).
 - https://mcp.deepwiki.com/sse (SSE transport only, no Auth)
