@@ -35,23 +35,17 @@ In the previous guide you prepared by installing these utils, if you didn't, fol
 - Standalone Containers (may support STDIO, SSE or even Streamable-HTTP)
 - Via MCP Toolkit from Docker Desktop extension (supports STDIO protocol only)
 
-### 4. **Additional Local MCP Servers Requirements**
-In the previous guide you prepared by installing these utils, if you didn't, follow the previous step in [README.md](../):
-- With `uv`, `npm`, `bun`.
-- Standalone Containers (may support STDIO, SSE or even Streamable-HTTP)
-- Via MCP Toolkit from Docker Desktop extension (supports STDIO protocol only)
-
-#### 4.1 **Cloud MCP Servers**
+#### 3.1 **Cloud MCP Servers**
 Some online services have native MCP support (e.g. GitHub, Cloudflare).
 - https://api.githubcopilot.com/mcp/ (streamable-HTTP only, requires Authentication, [read more](https://github.com/github/github-mcp-server))
 - https://docs.mcp.cloudflare.com/sse (SSE transport only, no Auth), see [other Cloudflare's own MCP servers here](https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/).
 - https://mcp.deepwiki.com/sse (SSE transport only, no Auth)
 
-### 5. **Open VS Code & Create a project**
+### 4. **Open VS Code & Create a project**
 - Create an empty folder on your computer
 - Start VS Code app and open the recently created folder
 
-### 6. **⚙️ VS Code Copilot Chat UI**
+### 5. **⚙️ VS Code Copilot Chat UI**
 
 <img src="./1_vscode_mcp.gif" alt="VS Code Copilot Chat UI" width="300">
 
@@ -64,10 +58,10 @@ Some online services have native MCP support (e.g. GitHub, Cloudflare).
 
 The Workspace Settings for project-based MCP config will only apply those MCP Servers for your currently opened workspace. While the "User Settings" installed MCP Servers will be used by VS Code GitHub Copilot Chat across all your projects.
 
-### 7. **Transport Protocol**
+### 6. **Transport Protocol**
 
-#### **7.1 STDIO**
-- After completing step #6, choose Command (STDIO), enter this command `npx -y @modelcontextprotocol/server-filesystem "/Users/username/Desktop" "/path/to/other/allowed/dir"`
+#### **6.1 STDIO**
+- After completing step #5, choose Command (STDIO), enter this command `npx -y @modelcontextprotocol/server-filesystem "/Users/username/Desktop" "/path/to/other/allowed/dir"`
 - Press Enter
 - Then give a name for this MCP Server `filesystem`
 - Choose if you wish to add this MCP Server Globally (User Settings) or to this project only (Workspace Settings - saves into `.vscode/mcp.json`)
@@ -75,24 +69,24 @@ The Workspace Settings for project-based MCP config will only apply those MCP Se
 
 Alternatively add `docker run -i --rm alpine/socat STDIO TCP:host.docker.internal:8811` command. (You need to have installed Docker Desktop and the MCP Toolkit extension).
 
-#### **7.2 SSE**
+#### **6.2 SSE**
 `/sse` at the end indicates that transport protocol is SSE. 
-- After completing step #6, choose HTTP (HTTP or Server-Side-Events), enter this command `https://mcp.deepwiki.com/sse`
+- After completing step #5, choose HTTP (HTTP or Server-Side-Events), enter this command `https://mcp.deepwiki.com/sse`
 - Press Enter
 - Then give a name for this MCP Server `deepwiki`
 - Choose if you wish to add this MCP Server Globally (User Settings) or to this project only (Workspace Settings - saves into `.vscode/mcp.json`)
 - Observe the opened `settings.json` file, scroll down to the `"mcp":`
 
-#### **7.3 streamable-HTTP**
+#### **6.3 streamable-HTTP**
 `/mcp` at the end typically indicates that transport protocol is streamable-HTTP. 
-- After completing step #6, choose HTTP (HTTP or Server-Side-Events), enter this command `https://mcp.context7.com/mcp`
+- After completing step #5, choose HTTP (HTTP or Server-Side-Events), enter this command `https://mcp.context7.com/mcp`
 - Press Enter
 - Then give a name for this MCP Server `context7`
 - Choose if you wish to add this MCP Server Globally (User Settings) or to this project only (Workspace Settings - saves into `.vscode/mcp.json`)
 - Observe the opened `settings.json` file, scroll down to the `"mcp":`
 
-#### **7.4 NPM Package**
-- After completing step #6, choose NPM Package, enter this command `@netlify/mcp`
+#### **6.4 NPM Package**
+- After completing step #5, choose NPM Package, enter this command `@netlify/mcp`
 - Press Enter
 - Press Allow
 - Then give a name for this MCP Server `netlify`
@@ -101,16 +95,16 @@ Alternatively add `docker run -i --rm alpine/socat STDIO TCP:host.docker.interna
 
 Alternatively add `@modelcontextprotocol/server-filesystem` command. After you add this command, you'll have to modify the default placeholders `/Users/username/Desktop` & `/path/to/other/allowed/dir` for this MCP Server to correctly work.
 
-#### **7.5 PIP Package**
-- After completing step #6, choose PIP Package, enter this command `mcp-server-time`
+#### **6.5 PIP Package**
+- After completing step #5, choose PIP Package, enter this command `mcp-server-time`
 - Press Enter
 - Press Allow
 - Then give a name for this MCP Server `time`
 - Choose if you wish to add this MCP Server Globally (User Settings) or to this project only (Workspace Settings - saves into `.vscode/mcp.json`)
 - Observe the opened `settings.json` file, scroll down to the `"mcp":`
 
-#### **7.6 Docker Image**
-- After completing step #6, choose Docker Image, enter this command `mcp/fetch`
+#### **6.6 Docker Image**
+- After completing step #5, choose Docker Image, enter this command `mcp/fetch`
 - Press Enter
 - Then give a name for this MCP Server `fetch`
 - Choose if you wish to add this MCP Server Globally (User Settings) or to this project only (Workspace Settings - saves into `.vscode/mcp.json`)
