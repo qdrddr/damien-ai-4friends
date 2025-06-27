@@ -38,7 +38,7 @@ MCP bridges LLMs and your environment through:
 ---
 
 ## ⚙️ MCP Transport
-Each MCP Server may speak with one of a couple of these "languages" (MCP Transport Protocols). 
+Each MCP Server may speak with one of a couple of these "languages" (MCP Transport Protocols). Locally running MCP Servers almost all typically support STDIO transport protocol but may support SSE and Streamable-HTTP.
 
 - STDIO - typically with locally installed MCP Servers 
 - SSE - sometimes with locally installed MCP Servers, more often with cloud-based MCP Servers
@@ -51,7 +51,6 @@ Same goes to MCP Clients, which may not speak MCP Server's language, that's wher
 - **SuperGateway** - Converts between STDIO and HHTP-based transports (SSE, StreamableHttp, WebSockets)
 
 ### 1. Locally running MCP Servers
-
 To run MCP Servers locally you'll need these tools installed:
 - Locally with [`npm`/`npx`](https://github.com/npm/cli), [`uv`/`uvx`/`pip`](https://docs.astral.sh/uv/getting-started/installation/), [`bun/bunx`](https://bun.sh/docs/installation), [`node`](https://nodejs.org/en/download), [python](https://www.geeksforgeeks.org/how-to-install-python-on-windows/). Note when you install `uv` it also has `uvx`, and `npm` has build-in `npx` and the same with `bun`/`bunx`. Most of the commands starting with `pip` can be replaced with `uv pip` or `uvx`. Most of the time installed like this MCP Servers support STDIO-only but may support SSE or even Streamable-HTTP transports.
 - In containers [Docker](https://www.docker.com/products/docker-desktop/) ([docs](https://docs.docker.com/get-started/get-docker/)) / [Podman](https://podman-desktop.io/downloads) - may support one or a few transport protocols.
