@@ -53,7 +53,7 @@ Same goes to MCP Clients, which may not speak MCP Server's language, that's wher
 ### 1. Locally running MCP Servers
 
 To run MCP Servers locally you'll need these tools installed:
-- Locally with [`npm`/`npx`](https://github.com/npm/cli), [`uv`/`uvx`/`pip`](https://docs.astral.sh/uv/getting-started/installation/), [`bun/bunx`](https://bun.sh/docs/installation). Note when you install `uv` it also has `uvx`, and `npm` has build-in `npx` and the same with `bun`/`bunx`. Most of the commands starting with `pip` can be replaced with `uv pip` or `uvx`. Most of the time installed like this MCP Servers support STDIO-only but may support SSE or even Streamable-HTTP transports.
+- Locally with [`npm`/`npx`](https://github.com/npm/cli), [`uv`/`uvx`/`pip`](https://docs.astral.sh/uv/getting-started/installation/), [`bun/bunx`](https://bun.sh/docs/installation). Note when you install `uv` it also has `uvx`, [`node`](https://nodejs.org/en/download), and `npm` has build-in `npx` and the same with `bun`/`bunx`. Most of the commands starting with `pip` can be replaced with `uv pip` or `uvx`. Most of the time installed like this MCP Servers support STDIO-only but may support SSE or even Streamable-HTTP transports.
 - In containers [Docker](https://www.docker.com/products/docker-desktop/) ([docs](https://docs.docker.com/get-started/get-docker/)) / [Podman](https://podman-desktop.io/downloads) - may support one or a few transport protocols.
 - Via MCP Toolkit (Docker Desktop extension) - STDIO-only.
 

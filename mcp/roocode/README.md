@@ -31,7 +31,7 @@ Go to [Marketplace.VisualStudio](https://marketplace.visualstudio.com/items?item
 
 ### 3. **Local MCP Servers Requirements**
 In the previous guide you prepared by installing these utils, if you didn't, follow the previous step in [README.md](../):
-- With `uv`, `npm`, `bun`.
+- With `uv`, `npm`, `pip`, `node`, `docker`.
 - Standalone Containers (may support STDIO, SSE or even Streamable-HTTP)
 - Via MCP Toolkit from Docker Desktop extension (supports STDIO protocol only)
 
