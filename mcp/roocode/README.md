@@ -7,9 +7,9 @@ By the end of this lesson, you'll be able to:
 - Set up **RooCode Extension** as an MCP Client
 - Connect RooCode to local and cloud-based MCP Servers
 - Use `mcp_settings.json` configuration
-- Will take aproximatelly 20 minutes
+- Will take approximately 15 minutes
 
-## 🖥️ RooCode
+## **🖥️ RooCode**
 
 **RooCode** is a developer-oriented Extension for VS Code IDE with built-in LLM support and native MCP Client functionality. It supports:
 
@@ -17,17 +17,17 @@ By the end of this lesson, you'll be able to:
 - A dedicated `mcp_settings.json` (Global) & `mcp.json` (per project) configurations
 - Direct integration with popular local MCP servers
 
-Other supported developer-oriented MCP clients include: Cursor, Windsur, VS Code with Copilot, Cline, Continue (vary in transport & config support).
+Other supported developer-oriented MCP clients include: Cursor, Windsurf, VS Code with Copilot, Cline, Continue (vary in transport & config support).
 
 ---
 
-## How to Set Up MCP with RooCode
+## **How to Set Up MCP with RooCode**
 
 ### 1. **Install VS Code**
 Go to [Code.VisualStudio.com](https://code.visualstudio.com/Download) and install the app for your OS.
 
 ### 2. **Install RooCode**
-Go to [Marketplace.VisualStudio](https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline) and install RooCode Extension for your VS Code IDE. Alternatively use the Extension button in VS Code on the left hand side the four cubes icon with one of the top right cube falling off and search for RooCode. Press `Install` button.
+Go to [Marketplace.VisualStudio](https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline) and install RooCode Extension for your VS Code IDE. Alternatively use the Extension button in VS Code on the left hand side (the four cubes icon with one of the top right cubes falling off) and search for RooCode. Press the `Install` button.
 
 ### 3. **Local MCP Servers Requirements**
 In the previous guide you prepared by installing these utils, if you didn't, follow the previous step in [README.md](../):
@@ -41,12 +41,12 @@ Some online services have native MCP support (e.g. GitHub, Cloudflare).
 - https://docs.mcp.cloudflare.com/sse (SSE transport only, no Auth), see [other Cloudflare's own MCP servers here](https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/).
 - https://mcp.deepwiki.com/sse (SSE transport only, no Auth)
 
-### 4. Open VS Code & Create a project
+### 4. **Open VS Code & Create a project**
 - Create an empty folder on your computer
 - Start VS Code app and open the recently created folder
 
-### 4.1. ⚙️ RooCode UI: MCP Marketplace
-- On the lefthandside panel press "Roo Code" with icon of the Kangaroo
+### 4.1. **⚙️ RooCode UI: MCP Marketplace**
+- On the left-hand side panel press "Roo Code" with icon of the Kangaroo
 - On the left opened panel, find on the top the four cubes icon of the Roo Code, when hover over "Marketplace"
 - Install your first MCP Server: Search Context7, press install button
 - In the opened menu select "Project" & in the dropdown "Installation Method" menu choose "Remote Server"

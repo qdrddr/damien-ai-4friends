@@ -10,7 +10,7 @@ By the end of this lesson, you'll be able to:
 - Connect MCP Client to local and cloud-based MCP Servers
 - Understand transport protocols and proxies
 - Be aware of MCP's limitations
-- Will take aproximatelly 20 minutes
+- Will take approximately 15 minutes
 
 ---
 
@@ -30,10 +30,10 @@ MCP bridges LLMs and your environment through:
 
 ## 🖥️ MCP Client
 
-**MCP Client** Is a software that can connect to MCP Servers to get their available tools and provide those tools to your LLM. It supports:
+- **MCP Client** Is a software that can connect to MCP Servers to get their available tools and provide those tools to your LLM. It supports:
 
 - Consume in your custom code such as Python with [FastMCP module](https://github.com/modelcontextprotocol/python-sdk)
-- Or with User-Intergace-based applications such as: [Cursor](https://www.cursor.com/), [Windsur](https://windsurf.com/), VS Code with Copilot, [RooCode](https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline), [Cline](https://cline.bot/), [Continue](https://marketplace.visualstudio.com/items?itemName=Continue.continue).
+- Or with User-Interface-based applications such as: [Cursor](https://www.cursor.com/), [Windsurf](https://windsurf.com/), VS Code with Copilot, [RooCode](https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline), [Cline](https://cline.bot/), [Continue](https://marketplace.visualstudio.com/items?itemName=Continue.continue).
 
 ---
 
@@ -59,7 +59,11 @@ To run MCP Servers locally you'll need these tools installed:
 
 To prepare for this please go ahead and install Docker Desktop, `npm` and `uv` on your local computer.
 
-#### 1.1 **How uvx & npx work**
+#### 1.1 Docker Desktop
+- Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+- Open the app, in the right panel find "Extensions", Press "Manage", then select "Browse" tab, search "MCP Toolkit", Press "Install"
+
+#### 1.2 **How uvx & npx work**
 If for example you need to use `mcp-server-time` MCP Server locally, with uvx you don't need to install it! That's the whole point of using uvx (just like npx).
 
 **`uvx mcp-server-time` will:**
@@ -67,7 +71,8 @@ If for example you need to use `mcp-server-time` MCP Server locally, with uvx yo
 - Automatically download and install mcp-server-time in a temporary, isolated environment
 - Run it immediately
 - Clean up after execution (unless you specify otherwise)
-- This is similar to how `npx @mcp/filesystem` works - it downloads and runs the package without requiring a separate installation step.
+- This is similar to how `npx @mcp/filesystem` works - it downloads and runs the package without requiring a separate installation step, you just need `npm` installed.
+- Same goes for `bunx @sylphlab/filesystem-mcp` just install `bun`
 
 ### 2. Remotely running MCP Servers
 From online services with native MCP support (e.g. GitHub, DeepWiki, [Cloudflare](https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/)).
@@ -80,19 +85,21 @@ In some cases Auth is not needed, like for example https://mcp.deepwiki.com/ tha
 
 ### 3. **Update mcpServers.json**
 
-Open the [`mcpServers.json`](../mcpServers.json) example config file and upfdate:
+Open the [`mcpServers.json`](../mcpServers.json) example config file and update:
 - **OpenMemory/Cloud:** OPENMEMORY_API_KEY with your key. [Register](https://openmemory.dev) & get [API here](https://app.openmemory.dev/dashboard)
 - **Linkedin-my12345:** Composio with your URL that begins with `https://mcp.composio.dev/composio/server`. [Register](https://app.composio.dev/) and get the [URL here](https://mcp.composio.dev/dashboard) 
 - **filesystem:** with the correct full paths on your local computer 
 
 ## 🚧 MCP's Limitations
 Most notable limitations:
-- Security: Prompt poisoning, code injection, tool shadowing, cleartext creds. OAuth partly solves this (if your app supports it), also Docker Desktop MCP Toolkit is a better solution that  cleartext config with credentials, but still not an enterprise solution.  
-- OAuth-only: if your application has a different Auth mechanism, then you probably going to store your credentials in cleartext.
+- Security: Prompt poisoning, code injection, tool shadowing, cleartext creds. OAuth partly solves this (if your app supports it), also Docker Desktop MCP Toolkit is a better solution than cleartext config with credentials, but still not an enterprise solution.  
+- OAuth-only: if your application has a different Auth mechanism, then you're probably going to store your credentials in cleartext.
 - Performance: Context-window and token limits. Each MCP Server may expose a dozen of tools. More than 20-50 tools can significantly decrease quality of LLM performance, therefore controlling how many MCP servers used is crucial (and unfortunately a manual task).
 
 # Choose your MCP Client to continue
 
-- [Cursor](./cursor) - for Developers
-- [Roo Code (VS Code Extension)](./roocode) - for Developers
 - [Anthropic Claude Desktop](./claude-desktop) - for General Public
+- [Cursor](./cursor) - for Developers
+- [VS Code](./vscode) - for Developers
+- [Roo Code (VS Code Extension)](./roocode) - for Developers
+- [VS Code Copilot Chat](./vscode) - for Developers

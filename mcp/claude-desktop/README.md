@@ -4,20 +4,20 @@
 
 By the end of this lesson, you'll be able to:
 
-- Set up **RooCode Extension** as an MCP Client
-- Connect RooCode to local and cloud-based MCP Servers
+- Set up **Claude Desktop** as an MCP Client
+- Connect Claude Desktop to local and cloud-based MCP Servers
 - Use `claude_desktop_config.json` configuration
-- Will take aproximatelly 20 minutes
+- Will take approximately 15 minutes
 
-## 🖥️ Claude Desktop
+## **🖥️ Claude Desktop**
 
-**Claude Desktop** is a application for general public to interact with AI wia UI with built-in LLM support and native MCP Client functionality. It supports:
+**Claude Desktop** is an application for general public to interact with AI via UI with built-in LLM support and native MCP Client functionality. It supports:
 
 - `STDIO` transport protocol only
 - A dedicated `claude_desktop_config.json` configuration
 - Direct integration with popular local MCP servers
 
-Other supported developer-oriented MCP clients include: Cursor, Windsur, VS Code with Copilot, Cline, Continue (vary in transport & config support).
+Other supported developer-oriented MCP clients include: Cursor, Windsurf, VS Code with Copilot, Cline, Continue (vary in transport & config support).
 
 ---
 
@@ -33,14 +33,14 @@ In the previous guide you prepared by installing these utils, if you didn't, fol
 - Via MCP Toolkit from Docker Desktop extension (supports STDIO protocol only)
 
 #### 3 **Cloud MCP Servers**
-Some online services have native MCP support (e.g. GitHub, Cloudflare). But Claude Desktop does not support thouse, fortunatelly we can use MCP Proxy to fix that issue.
+Some online services have native MCP support (e.g. GitHub, Cloudflare). But Claude Desktop does not support those, fortunately we can use MCP Proxy to fix that issue.
 - https://api.githubcopilot.com/mcp/ (streamable-HTTP only, requires Authentication, [read more](https://github.com/github/github-mcp-server))
 - https://docs.mcp.cloudflare.com/sse (SSE transport only, no Auth), see [other Cloudflare's own MCP servers here](https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/).
 - https://mcp.deepwiki.com/sse (SSE transport only, no Auth)
 
-### 4. ⚙️ Claude Desktop UI
+### 4. **⚙️ Claude Desktop UI**
 
-<img src="./1_claude-desktop.png" alt="RooCode Marketplace UI" width="300">
+<img src="./1_claude-desktop.png" alt="Claude Desktop UI" width="300">
 
 - Open Claude Desktop
 - In the Settings go to "Developer" tab
