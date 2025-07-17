@@ -1,0 +1,10 @@
+.venv
+.python-version
+pyproject.toml
+
+.langchain.*
+langflow.db
+langflow.db-*
+~
+
+logs/
