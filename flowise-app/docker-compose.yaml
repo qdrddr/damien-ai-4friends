@@ -1,7 +1,8 @@
 name: flowise
 services:
     flowise:
-        image: flowiseai/flowise:2.2.5
+        # https://hub.docker.com/r/flowiseai/flowise/tags
+        image: flowiseai/flowise:3.0.5
         env_file:
         - env.txt
         restart: always
@@ -54,7 +55,8 @@ services:
             - ~/.flowise:/root/.flowise
         entrypoint: /bin/sh -c "sleep 3; flowise start"
     chroma:
-      image: chromadb/chroma:1.0.8
+      # https://hub.docker.com/r/chromadb/chroma/tags
+      image: chromadb/chroma:1.0.20
       restart: always
       ports:
         - "8000:8000"
