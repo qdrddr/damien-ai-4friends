@@ -4,7 +4,7 @@ services:
         # https://hub.docker.com/r/flowiseai/flowise/tags
         image: flowiseai/flowise:3.0.5
         env_file:
-        - env.txt
+        - .env.txt
         restart: always
         environment:
             - PORT=${PORT}
