@@ -34,6 +34,7 @@ MCP bridges LLMs and your environment through:
 
 - Consume in your custom code such as Python with [FastMCP module](https://github.com/modelcontextprotocol/python-sdk)
 - Or with User-Interface-based applications for developers such as: [Cursor](https://www.cursor.com/), [Windsurf](https://windsurf.com/), [VS Code GitHub Copilot](https://github.com/features/copilot), VS Code extentions: [RooCode](https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline), [Cline](https://cline.bot/), [Continue](https://marketplace.visualstudio.com/items?itemName=Continue.continue) and [others](https://glama.ai/mcp/clients)
+- Ensure your Docker Desktop or Podman Deskrop is running.
 - For general public: [Claud Desktop](https://claude.ai/download), [Letta ADE Desktop](https://docs.letta.com/guides/ade/overview), [LM Studio](https://lmstudio.ai/download)
 
 ---
