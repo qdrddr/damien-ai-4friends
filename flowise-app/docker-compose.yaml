@@ -58,6 +58,8 @@ services:
       # https://hub.docker.com/r/chromadb/chroma/tags
       image: chromadb/chroma:1.0.20
       restart: always
+      environment:
+        ANONYMIZED_TELEMETRY: false
       ports:
         - "8000:8000"
       volumes:
