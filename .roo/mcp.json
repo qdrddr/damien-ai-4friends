@@ -1,0 +1,49 @@
+{
+  "mcpServers": {
+    "context7": {
+      "type": "streamable-http",
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/tmp"
+      ]
+    },
+    "chroma": {
+      "command": "/opt/homebrew/bin/uv",
+      "args": [
+        "--directory",
+        "/yourpathto/git/chroma-mcp/src/chroma_mcp",
+        "run",
+        "server.py",
+        "--client-type",
+        "http",
+        "--host",
+        "localhost",
+        "--port",
+        "8000",
+        "--ssl",
+        "false"
+      ],
+      "env": {
+        "CHROMA_DOTENV_PATH": ".vscode/.chroma_env",
+        "ANONYMIZED_TELEMETRY": "false"
+      }
+    },
+    "flowise": {
+      "command": "/opt/homebrew/bin/uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/matthewhand/mcp-flowise",
+        "mcp-flowise"
+      ],
+      "env": {
+        "FLOWISE_API_KEY": "DefaultKey: http://localhost:3000/apikey",
+        "FLOWISE_API_ENDPOINT": "http://localhost:3000"
+      }
+    }
+  }
+}
