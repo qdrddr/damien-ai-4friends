@@ -46,11 +46,14 @@
       }
     },
     "PROJECT_ID_STDIO": {
-            "command": "/opt/homebrew/bin/uvx",
-            "args": [
-                "mcp-proxy",
-                "http://LANGFLOW_SERVER_ADDRESS:PORT/api/v1/mcp/project/PROJECT_ID/sse"
-            ]
-        }
+      "command": "/opt/homebrew/bin/uvx",
+      "args": [
+        "mcp-proxy",
+        "http://LANGFLOW_SERVER_ADDRESS:PORT/api/v1/mcp/project/PROJECT_ID/sse"
+      ]
+    },
+    "env": {
+      "KEY": "VALUE"
+    }
   }
 }
