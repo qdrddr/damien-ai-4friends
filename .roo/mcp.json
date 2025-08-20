@@ -49,11 +49,14 @@
       "command": "/opt/homebrew/bin/uvx",
       "args": [
         "mcp-proxy",
+        "--headers",
+        "x-api-key",
+        "${API_KEY}",
         "http://LANGFLOW_SERVER_ADDRESS:PORT/api/v1/mcp/project/PROJECT_ID/sse"
       ]
     },
     "env": {
-      "KEY": "VALUE"
+      "API_KEY": "VALUE"
     }
   }
 }
